@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.container img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* very strange*/
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float:left;
+  width:20%;
+  padding: 10px;
+  cursor:pointer;
+}
+
+/* clear fix */
+.rox:after {
+  content:"";
+  clear:both;
+  display: table;
+}
+
+.audio {
+  position: absolute;
+  Bottom: 10px
+  left: 10%;
+  transform: translateX(-182%);
+  z-index: 1; /* Ensure the audio controls are above the image */
+}
+
+.column a img {
+  transition: transfrom 0.3s ease;
+}
+
+.column a:hover img {
+  transfrom: scale(1.1);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="/Users/tiffanyshe/Downloads/BowArt/asset/Temple 02.png" alt="Temple 02" onclick="playAudio();">
+</div>
+
+<script>
+//Define the audio object
+  const aAudio = new Audio('/Users/tiffanyshe/Downloads/BowArt/audio/1.mp3')
+
+//Function to play the audio
+  function playAudio(){
+    aAudio.play();
+  }
+</script>
+  
+<div class="row">
+    <div class="column">
+    <a href="/Users/tiffanyshe/Downloads/BowArt/page04.html" target="form">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/pineapple.png" alt="pineapple" style="width: 80px; height:100px"><p>Form</p></div>
+
+    <div class="column">
+    <a href="/Users/tiffanyshe/Downloads/BowArt/page05.html" target="realm">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/apple.png" alt="apple" style="width: 80px; height:100px"><p>Feeling</p></div>
+
+    <div class="column">
+    <a href="/Users/tiffanyshe/Downloads/BowArt/page06.html" target="conception">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/pear.png" alt="pear" style="width: 80px; height:100px"><p>Conception</p></div>
+
+    <div class="column">
+    <a href="/Users/tiffanyshe/Downloads/BowArt/page08.html" target="volition">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/orange.png" alt="orange" style="width: 80px; height:100px"><p>Volition</p></div>
+
+    <div class="column">
+    <a href="/Users/tiffanyshe/Downloads/BowArt/page09.html" target="Consciousness">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/papaya.png" alt="papaya" style="width: 80px; height:100px"><p>Consciousness</p></div>
+</div>
+</div>
+
+
+
+</body>
+</html>

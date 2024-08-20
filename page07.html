@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    text-align: center;
+    font-family: Times, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*center vertically*/
+    align-items: center; /*center horizontally*/
+  }
+
+  h2, p {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  img.stove {
+    display: block;
+    margin: 30px auto;
+    width: 50%;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+
+  img.stove:hover {
+    transform: scale(1.1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .poe {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+
+  .set {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: transparents;
+    position: relative;
+    margin: 0 10px;
+  }
+
+  .set img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease-out;
+    position: absolute;
+  }
+
+  .spinning img {
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    from { transform: translateY(0%); }
+    to { transform: translateY(-300%); }
+  }
+
+ .button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+ .button:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+  }
+.flip-card-container {
+  display: flex;
+  justify-content: center;
+  gap:20px;
+  margin:20px;
+  cursor: pointer;
+}
+
+ .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+ .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: lightpink;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+
+<h2>The bodhisattva’s mind is free from hindrances</h2>
+<p>With no hindrances, there is no fear.</p>
+
+<!-- Add onclick event to call playAudio() -->
+<img src="/Users/tiffanyshe/Downloads/BowArt/asset/stove.png" alt="Stove" class="stove" onclick="playAudio();">
+
+<h2>Calm down, you shall know my words.</h2>
+<p> If you spin 3 poes in yes (one in red, and another in grey), we can continue to the next section. <br>If not, press "Exit". Today is not a good time to have a conversation.</p>
+
+<div class="poe">
+  <div class="set" id="set1">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe3.png" alt="laugh" style="top: 200%;">
+  </div>
+
+  <div class="set" id="set2">
+     <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe3.png" alt="laugh" style="top: 200%;">
+  </div>
+
+  <div class="set" id="set3">
+     <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="/Users/tiffanyshe/Downloads/BowArt/asset/poe3.png" alt="laugh" style="top: 200%;">
+  </div>
+</div>
+
+<button class="button" onclick="spin()">Spin</button>
+<a href="/Users/tiffanyshe/Downloads/BowArt/page01.html" target="page01" title="Exit">Exit</a>
+
+<script>
+  function spin() {
+    const sets = document.querySelectorAll('.set');
+    sets.forEach(set => {
+      set.classList.add('spinning');
+      const images = set.querySelectorAll('img');
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const stopPosition = -(randomIndex * 100) + '%';
+
+      setTimeout(() => {
+        set.classList.remove('spinning');
+        images.forEach((img, index) => {
+          img.style.transform = `translateY(${(index - randomIndex) * 100}%)`;
+        });
+      }, 1000 + Math.random() * 1500);
+    });
+  }
+
+//Define the audio object
+  const aAudio = new Audio('/Users/tiffanyshe/Downloads/BowArt/audio/3.mp3')
+
+//Function to play the audio
+  function playAudio(){
+    aAudio.play();
+  }
+
+</script>
+<br>
+<br>
+<h2>Please flip a card that you feel the most connection with.</h2>
+<p>View the result with an open mind, to avoid unnecessary anxiety.</p>
+
+<div class="flip-card-container">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/tiffanyshe/Downloads/BowArt/asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Lot 1</h1> 
+      <p>Omen: Auspicious</p>
+      <br>
+      <p>At the time the world began, all things were preordined. A favorable day brings each fruit ripeness. This is not uncommon that such a happy lot is drawn. By loyal and upright, the king will proclaim.</p>
+      <br>
+      <p> 上籤 </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/tiffanyshe/Downloads/BowArt/asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Lot 2</h1> 
+      <p>Omen: Average</p>
+      <br>
+      <p>My counsel to you is honest and plain, bear it in mind. Pursuit of trade in other lands is not your lot. There is no better way to choose. Remain unchanged as anything else has no place.</p>
+      <br>
+      <p> 中籤 </p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+   <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/tiffanyshe/Downloads/BowArt/asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Lot 3</h1> 
+      <p>Omen: Ominous</p> 
+      <br>
+      <p>The Gods and Buddhas have told you of changes to come, Pay no heed to what the foolish said. As the aged drew this divine lot, it is better to leave things as they are and wait.</p>
+      <br>
+      <p> 下籤 </p>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

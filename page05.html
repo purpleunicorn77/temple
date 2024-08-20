@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+  }
+
+  video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+  }
+
+  video{
+    width: 100%;
+    height: auto;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+.text-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    color: grey;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .button {
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        outline: none;
+        color: white;
+        background-color: darkgrey;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #666;
+        }
+
+        .button:hover {background-color: darkgrey;}
+
+        .button:active {
+        background-color: grey;
+        box-shadow: 0 5px #666;
+        transform: translateX(-50%);
+        }
+
+</style>
+</head>
+<body>
+
+<div class="video-container">
+<div class="text-overlay">
+    There is no feeling, conception, volition, or consciousness;<br>
+    No eye, ear, nose, tongue, body, or mind;<br>
+    No form, sound, smell, taste, touch, or dharmas;<br>
+    No realm of vision, and so forth,<br>
+    Up to no realm of mind-consciousness;
+  </div>
+  <video controls>
+    <source src="/Users/tiffanyshe/Downloads/BowArt/realm.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  </div>
+
+  <div class="text-bottom">
+  Flute : Nagendra Rai | Arrange/ Mixing : Rajan Karki | Credit : Vedan Media
+</div>
+
+<a href="/Users/tiffanyshe/Downloads/BowArt/page01.html" target="page01">
+    <button class="button">I understand.</button>
+
+</body>
+</html>
