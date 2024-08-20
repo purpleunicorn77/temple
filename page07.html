@@ -143,33 +143,33 @@
 <p>With no hindrances, there is no fear.</p>
 
 <!-- Add onclick event to call playAudio() -->
-<img src="asset/stove.png" alt="Stove" class="stove" onclick="playAudio();">
+<img src="./asset/stove.png" alt="Stove" class="stove" onclick="playAudio();">
 
 <h2>Calm down, you shall know my words.</h2>
 <p> If you spin 3 poes in yes (one in red, and another in grey), we can continue to the next section. <br>If not, press "Exit". Today is not a good time to have a conversation.</p>
 
 <div class="poe">
   <div class="set" id="set1">
-    <img src="asset/poe1.png" alt="yes" style="top: 0;">
-    <img src="asset/poe2.png" alt="no" style="top: 100%;">
-    <img src="asset/poe3.png" alt="laugh" style="top: 200%;">
+    <img src="./asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="./asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="./asset/poe3.png" alt="laugh" style="top: 200%;">
   </div>
 
   <div class="set" id="set2">
-     <img src="asset/poe1.png" alt="yes" style="top: 0;">
-    <img src="asset/poe2.png" alt="no" style="top: 100%;">
-    <img src="asset/poe3.png" alt="laugh" style="top: 200%;">
+     <img src="./asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="./asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="./asset/poe3.png" alt="laugh" style="top: 200%;">
   </div>
 
   <div class="set" id="set3">
-     <img src="asset/poe1.png" alt="yes" style="top: 0;">
-    <img src="asset/poe2.png" alt="no" style="top: 100%;">
-    <img src="asset/poe3.png" alt="laugh" style="top: 200%;">
+     <img src="./asset/poe1.png" alt="yes" style="top: 0;">
+    <img src="./asset/poe2.png" alt="no" style="top: 100%;">
+    <img src="./asset/poe3.png" alt="laugh" style="top: 200%;">
   </div>
 </div>
 
 <button class="button" onclick="spin()">Spin</button>
-<a href="page01.html" target="page01" title="Exit">Exit</a>
+<a href="./page01.html" target="page01" title="Exit">Exit</a>
 
 <script>
   function spin() {
@@ -190,7 +190,7 @@
   }
 
 //Define the audio object
-  const aAudio = new Audio('audio/3.mp3')
+  const aAudio = new Audio('./audio/3.mp3')
 
 //Function to play the audio
   function playAudio(){
@@ -207,7 +207,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+      <img src="./asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
     </div>
     <div class="flip-card-back">
       <h1>Lot 1</h1> 
@@ -224,7 +224,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+      <img src="./asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
     </div>
     <div class="flip-card-back">
       <h1>Lot 2</h1> 
@@ -242,7 +242,7 @@
    <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
+      <img src="./asset/fortunestick.png" alt="Avatar" style="width:300px;height:300px;">
     </div>
     <div class="flip-card-back">
       <h1>Lot 3</h1> 
