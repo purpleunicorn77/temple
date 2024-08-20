@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-body, html {
-  margin: 0;
+body, html{
+  margin:0;
   padding: 0;
   height: 100%;
   display: flex;
@@ -16,7 +16,7 @@ body, html {
 
 .container {
   position: relative;
-  width: 400px;
+  width: 400px
   max-width: 300px;
 }
 
@@ -30,7 +30,7 @@ body, html {
   position: absolute;
   top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center the video */
   width: 45%;
   height: auto;
   object-fit: cover;
@@ -41,7 +41,7 @@ body, html {
   position: absolute;
   top: 30%;
   left: 52%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center the video */
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -51,53 +51,48 @@ body, html {
 }
 
 .button {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  outline: none;
-  color: white;
-  background-color: black;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #666;
-}
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        outline: none;
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #666;
+        }
 
-.button:hover {
-  background-color: #00A19A;
-}
+        .button:hover {background-color: #00A19A;}
 
-.button:active {
-  background-color: skyblue;
-  box-shadow: 0 5px #666;
-  transform: translateX(-50%);
-}
+        .button:active {
+        background-color: skyblue;
+        box-shadow: 0 5px #666;
+        transform: translateX(-50%);
+        }
 
 </style>
 </head>
 <body>
 
+
 <div class="container">
   <img src="./asset/meditation.png" alt="Background Image" class="background-image">
-  <video class="overlay-video" controls>
-    <source src="./waterfall-1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="overlay-text">
-    Form is not different from emptiness, 
-    <p>Emptiness is not different from form.</p>
-  </div>
+<video class="overlay-video" controls>
+<source src="./waterfall-1.mp4" type="video/mp4">
+Your browser does not support the video tag.  </video>
+<div class="overlay-text">Form is not different from emptiness, <p>Emptiness is not different from form.</p></div>
 
 <a href="./page01.html" target="page01">
-<button class="button" onclick="history.back()">I understand.</button>
-  
+<button class="button">I understand.</button>
+
 </div>
 </body>
 </html>
