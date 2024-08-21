@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  background-image: url('./asset/window.png');
+<style> 
+.fixed-bg {
+  background-image: url("./asset/window.png");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: absolute;  
   background-size: cover;
 }
 
-h1 {text-align: center;}
+h2 {text-align: center;}
 p {text-align: center;}
 div {text-align: center;}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
 
 </style>
 </head>
 <body>
-<br>
-<br>
-<br>
-<h1>About</h1>
-<p>The aim of this installation is to integrate the traditional <p> Buddhist techniques into game design.</p>
-<p>In doing so examining religious practices as </p><p>forms of communication and expressions of digital spirituality. </p>
-<p>Through this game, </p><p>I intend to embody the essence of Buddhist teachings</p><p>and invite the audience to experience the unique culture of </p><p>Taiwanese temples.
-</p>
-<br>
-<br>
-<div> Tiffany Hsu </div>
 
+<h2>About</h2>
+<p> This installation aims to integrate traditional Buddhist techniques into game design. In doing so examining religious practices as forms of communnication and expressions of digital spirituality. Through this game, I intend to embody the essence of Buddhist teachings and invite the audience to experience the unique culture of Taiwanese temples.</p>
+ 
+<div class="fixed-bg"></div>
 
+<div style="background-color:white;"><h2>Game Instruction</h2></div>
+<p>The goal of the game is to reach Nirvana by understanding that form, feeling, perception, volition, and consciousness are all empty. This realization enables us to transcend suffering. While suffering is a part of every life, Nirvana—the end of suffering—is attainable for all.</p>
+
+<img src="./asset/instruction.png" alt="instruction" class="image"></div>
 
 </body>
 </html>
