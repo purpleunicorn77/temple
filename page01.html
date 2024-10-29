@@ -4,67 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Container for the entire layout */
-.container img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
 /* Reset box-sizing */
 * {
   box-sizing: border-box;
 }
 
-/* Style for the left content (image grid) */
-.image-grid {
-  float: left;
-  width: 70%; /* Adjusted width to allow space for the right panel */
+/* Container to hold Temple image and narrative panel side-by-side */
+.top-container {
+  display: flex;
+  width: 100%;
   padding: 10px;
+  align-items: flex-start;
 }
 
-/* Each column for the image grid */
-.column {
-  width: 19%; /* Adjusted to fit in a narrower container */
-  padding: 10px;
-  float: left;
-  text-align: center;
+/* Style for the Temple 02 image */
+.temple-image {
+  width: 70%; /* Adjust as needed to make room for narrative panel */
+  padding-right: 10px;
 }
 
-.row:after {
-  content: "";
-  clear: both;
-  display: table;
+.temple-image img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
 }
 
-/* Style for audio button */
-.audio {
-  position: absolute;
-  bottom: 10px;
-  left: 10%;
-  transform: translateX(-182%);
-  z-index: 1;
-}
-
-/* Hover effect for images */
-.column a img {
-  transition: transform 0.3s ease;
-}
-
-.column a:hover img {
-  transform: scale(1.1);
-}
-
-/* Style for the right-side narrative panel */
+/* Style for the narrative panel next to the temple image */
 .narrative-panel {
-  float: right;
-  width: 25%; /* Right panel width */
-  height: 100vh; /* Full viewport height */
+  width: 30%; /* Adjust width to control panel size */
   padding: 20px;
   background-color: #f8f9fa;
   overflow-y: auto;
   border-left: 2px solid #ddd;
   font-family: Arial, sans-serif;
+  height: auto;
 }
 
 .narrative-panel h2 {
@@ -77,50 +50,76 @@
   line-height: 1.6;
   color: #555;
 }
+
+/* Style for the image grid below */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.column {
+  width: 19%; /* Adjust to fit five columns */
+  padding: 10px;
+  text-align: center;
+}
+
+.column img {
+  width: 80px;
+  height: 100px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.column:hover img {
+  transform: scale(1.1);
+}
 </style>
 </head>
 <body>
 
-<div class="container">
-  <img src="./asset/Temple 02.png" alt="Temple 02" onclick="playAudio();">
-</div>
+<!-- Container with Temple 02 image and Narrative Panel side-by-side -->
+<div class="top-container">
+  <div class="temple-image">
+    <img src="./asset/Temple 02.png" alt="Temple 02" onclick="playAudio();">
+  </div>
 
-<!-- Image grid, now aligned to the left -->
-<div class="image-grid">
-  <div class="row">
-    <div class="column">
-      <a href="./page04.html" target="form">
-      <img src="./asset/pineapple.png" alt="pineapple" style="width: 80px; height:100px"><p>Form</p></a>
-    </div>
-
-    <div class="column">
-      <a href="./page05.html" target="realm">
-      <img src="./asset/apple.png" alt="apple" style="width: 80px; height:100px"><p>Feeling</p></a>
-    </div>
-
-    <div class="column">
-      <a href="./page06.html" target="conception">
-      <img src="./asset/pear.png" alt="pear" style="width: 80px; height:100px"><p>Conception</p></a>
-    </div>
-
-    <div class="column">
-      <a href="./page08.html" target="volition">
-      <img src="./asset/orange.png" alt="orange" style="width: 80px; height:100px"><p>Volition</p></a>
-    </div>
-
-    <div class="column">
-      <a href="./page09.html" target="Consciousness">
-      <img src="./asset/papaya.png" alt="papaya" style="width: 80px; height:100px"><p>Consciousness</p></a>
-    </div>
+  <!-- Right-side narrative panel -->
+  <div class="narrative-panel">
+    <h2>Narratives</h2>
+    <p>Here you can add narrative descriptions or texts about each section.</p>
+    <p>For example, clicking "Form" can display details about this concept, its symbolism, and how it fits within the broader theme.</p>
+    <!-- Add more narrative content here as needed -->
   </div>
 </div>
 
-<!-- Right-side narrative panel -->
-<div class="narrative-panel">
-  <h2>Narratives</h2>
-  <p>Here you can add narrative descriptions or texts about each section.</p>
-  <p>For example, clicking "Form" can display details about this concept, its symbolism, and how it fits within the broader theme.</p>
-  <!-- Add more narrative content here as needed -->
+<!-- Image grid, below the temple image and narrative panel -->
+<div class="image-grid">
+  <div class="column">
+    <a href="./page04.html" target="form">
+      <img src="./asset/pineapple.png" alt="pineapple"><p>Form</p>
+    </a>
+  </div>
+  <div class="column">
+    <a href="./page05.html" target="realm">
+      <img src="./asset/apple.png" alt="apple"><p>Feeling</p>
+    </a>
+  </div>
+  <div class="column">
+    <a href="./page06.html" target="conception">
+      <img src="./asset/pear.png" alt="pear"><p>Conception</p>
+    </a>
+  </div>
+  <div class="column">
+    <a href="./page08.html" target="volition">
+      <img src="./asset/orange.png" alt="orange"><p>Volition</p>
+    </a>
+  </div>
+  <div class="column">
+    <a href="./page09.html" target="Consciousness">
+      <img src="./asset/papaya.png" alt="papaya"><p>Consciousness</p>
+    </a>
+  </div>
 </div>
 
 <script>
