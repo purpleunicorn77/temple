@@ -12,19 +12,16 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('./asset/meditation.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Prevent scrolling when panel is open */
 }
 
 .container {
   position: relative;
-  width: 400px;
-  max-width: 300px;
-}
-
-.background-image {
-  width: 100%;
-  height: 100vh; /* Ensure full viewport height */
-  object-fit: cover; /* Keep aspect ratio, cover the container */
-  display: block;
+  z-index: 1;
 }
 
 .overlay-video {
