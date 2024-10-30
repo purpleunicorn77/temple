@@ -50,33 +50,63 @@ body, html{
   z-index: 1; 
 }
 
+.button-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
 .button {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 20px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        outline: none;
-        color: white;
-        background-color: black;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #666;
-        }
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #666;
+}
 
-        .button:hover {background-color: #00A19A;}
+.button:hover { background-color: #00A19A; }
 
-        .button:active {
-        background-color: skyblue;
-        box-shadow: 0 5px #666;
-        transform: translateX(-50%);
-        }
+.button:active {
+  background-color: skyblue;
+  box-shadow: 0 5px #666;
+}
+
+/* Panel Styling */
+.panel {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.panel.active {
+  right: 0; /* Slide the panel in */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
 
 </style>
 </head>
@@ -90,9 +120,27 @@ body, html{
 Your browser does not support the video tag.  </video>
 <div class="overlay-text">Form is not different from emptiness, <p>Emptiness is not different from form.</p></div>
 
-<a href="./page01.html">
-<button class="button">I understand</button>
-
+<div class="button-container">
+    <a href="./page01.html"><button class="button">I understand</button></a>
+    <button class="button" onclick="openPanel()">Learn More</button>
+  </div>
+<!-- Sliding Panel -->
+<div class="panel" id="infoPanel">
+  <span class="close-btn" onclick="closePanel()">&times;</span>
+  <h2>More Information</h2>
+  <p>All fruiting Karma arises from causes and conditions, and the nature of fruiting karma is unobtainable. If it is not available, it is empty. Therefore, all the Buddha’s teachings are ultimately empty. There is no permanence, no immutability. </p>
 </div>
+</div>
+  
+<script>
+function openPanel() {
+  document.getElementById("infoPanel").classList.add("active");
+}
+
+function closePanel() {
+  document.getElementById("infoPanel").classList.remove("active");
+}
+</script>
+
 </body>
 </html>
