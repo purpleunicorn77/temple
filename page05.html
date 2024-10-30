@@ -58,33 +58,54 @@
     box-sizing: border-box;
   }
 
-  .button {
-        position: absolute;
-        bottom: 70px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 20px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        outline: none;
-        color: white;
-        background-color: darkgrey;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #666;
-        }
+ .button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #666;
+}
 
-        .button:hover {background-color: darkgrey;}
+.button:hover { background-color: #00A19A; }
 
-        .button:active {
-        background-color: skyblue;
-        box-shadow: 0 5px #666;
-        transform: translateX(-50%);
-        }
+.button:active {
+  background-color: skyblue;
+  box-shadow: 0 5px #666;
+}
+
+/* Panel Styling */
+.panel {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.panel.active {
+  right: 0; /* Slide the panel in */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
 
 </style>
 </head>
@@ -98,14 +119,33 @@
     No realm of vision, and so forth,<br>
     Up to no realm of mind-consciousness;
   </div>
-  <video controls>
+<video controls>
     <source src="./realm-2.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
-  </video>
+</video>
+
+<div class="button-container">
+    <a href="./page01.html"><button class="button">I understand</button></a>
+    <button class="button" onclick="openPanel()">Learn More</button>
+</div>
   </div>
 
-<a href="./page01.html" target="page01">
-    <button class="button">I understand</button>
+<!-- Sliding Panel -->
+<div class="panel" id="infoPanel">
+  <span class="close-btn" onclick="closePanel()">&times;</span>
+  <h2>More Information</h2>
+  <p>This panel provides additional details about the content. It slides in from the right when you click "Learn More."</p>
+</div>
+
+<script>
+function openPanel() {
+  document.getElementById("infoPanel").classList.add("active");
+}
+
+function closePanel() {
+  document.getElementById("infoPanel").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
