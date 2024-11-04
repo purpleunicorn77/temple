@@ -4,16 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.container {
-  text-align: center; /* Centers the image and buttons horizontally */
-  margin-top: 50px; /* Adjusts the top margin to bring content down a bit */
+/* Full-screen background */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('asset/nirvanab.png'); /* Background image */
+  background-size: cover; /* Makes the image cover the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  height: 100vh; /* Sets body height to full viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container img {
-  width: 100%;
+.container {
+  position: relative;
+  width: 200px; /* Width of the square */
+  height: 200px; /* Height of the square */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: background color of the square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px; /* Optional: rounded corners for the square */
+}
+
+.nirvana-image {
+  position: absolute;
+  top: -40px; /* Adjust position as needed */
+  width: 80px; /* Adjust width as needed */
   height: auto;
 }
-div {
+
+.animated-box {
   width: 100px;
   height: 100px;
   background-color: red;
@@ -32,8 +56,8 @@ div {
 <body>
 
 <div class="container">
-  <img src="asset/nirvanab.png" alt="Nirvana">
-  <img src="asset/nirvana.png" alt="Nirvana">
+  <img src="asset/nirvana.png" alt="Nirvana" class="nirvana-image">
+  <div class="animated-box"></div>
 </div>
 
 </body>
