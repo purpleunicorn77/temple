@@ -59,6 +59,11 @@
     transition: transform 0.5s, top 0.5s;
 }
 
+.popup-image{
+  width: 30px;
+  height: 30px;
+}
+
 .openPopup {
     top: 50%;
     visibility: visible;
@@ -107,7 +112,7 @@
     <button class="button button2" onclick="window.location.href='./page00.html'"type="about">ABOUT</button>
   </div>
   <div class="popup" id="popup">
-    <img src="./asset/popup.png" alt="" width="30px" height="30px">
+    <img src="./asset/popup.png" alt="Popup Icon" class="popup-image">
     <h2>Welcome!</h2>
     <p>Before entering, please keep a calm and pious heart.</p>
     <button class="pushable" onclick="closePopup()">
