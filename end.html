@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 .container {
   text-align: center; /* Centers the image and buttons horizontally */
   margin-top: 50px; /* Adjusts the top margin to bring content down a bit */
@@ -14,12 +13,27 @@
   width: 100%;
   height: auto;
 }
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
 </style>
 </head>
 <body>
 
 <div class="container">
   <img src="asset/nirvanab.png" alt="Nirvana">
+  <img src="asset/nirvana.png" alt="Nirvana">
 </div>
 
 </body>
