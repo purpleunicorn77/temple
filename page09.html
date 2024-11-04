@@ -4,12 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
 
-body {
+.body {
     margin:25px;
     font-family: Arial, sans-serif;
 }
 
-div.polaroid {
+.polaroid {
   position: fixed;
   height: 300px;
   width: 20%;
@@ -26,12 +26,12 @@ div.polaroid {
     padding: 10px 20px;
 }
 
-img{
+.img{
     display: block;
     margin: 0 auto;
 }
 
-header {
+.header {
     text-align: center;
     font-size: 36px;
     color: #333;
@@ -39,14 +39,14 @@ header {
     font-weight: bold;
 }
 
-canvas {
+.canvas {
     border: 1px solid #d3d3d3;
     background-color: #f1f1f1;
     display: block;
     margin: 0 auto;
 }
 
-button {
+.button {
   display: inline-block;
   padding: 10px 18px;
   font-size: 18px;
@@ -62,11 +62,11 @@ button {
   margin: 4px 2px;
 }
 
-button:hover {
+.button:hover {
     background-color: black; /* Darker green on hover */
 }
 
-button:active {
+.button:active {
     background-color: darkgrey; 
     transform: scale(0.95); /* Slightly smaller on click */
     box-shadow: 0 9px #999;
@@ -142,7 +142,6 @@ button:active {
     transform: translateY(-2px);
 }
 
-
 </style>
 </head>
 
@@ -175,9 +174,7 @@ button:active {
 <!-- Exit Button -->
  <br>
     <p>May the merits of our deeds reach every part of the world!</p>
-    <a href="./end.html" target="_blank">
-        <button class="button exit" onclick="playAudio();" onclick="openPopup()">Exit</button>
-    </a>
+    <button class="button exit" onclick="openPopup()">Exit</button>
 </div>
 
 <!-- Game -->
@@ -325,7 +322,7 @@ function clearmove() {
 <--popup-->
 <div class="popup" id="popup">
     <img src="./asset/popup-1.png" alt="Popup Icon" class="popup-image">
-    <h2>Congradulate</h2>
+    <h2>Congradulations</h2>
     <p>Your tasks are all done, may your wish come true!</p>
     <button class="pushable" onclick="closePopup()">
       <span class="front">
@@ -336,6 +333,9 @@ function clearmove() {
 </div>
 
 <script>
+
+  const aAudio = new Audio('./audio/4-1.mp3');
+
   let popup = document.getElementById("popup");
 
   function openPopup() {
@@ -347,6 +347,5 @@ function clearmove() {
   }
 </script>
 
-</body>
 </body>
 </html>
