@@ -45,6 +45,56 @@
   transform: translateY(4px);
 }
 
+.popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    visibility: hidden;
+    transition: transform 0.5s, top 0.5s;
+}
+
+.openPopup {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+} 
+
+.popup h2{
+  font-size: 30px;
+  font-weight: 500;
+  margin: 10px 0 px;
+}
+
+.pushable {
+    background: hsl(120, 100%, 14%);
+    border-radius: 12px;
+    margin-top: 40px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(125 100% 29%);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
 </style>
 </head>
 <body>
@@ -53,9 +103,29 @@
   <img src="asset/Temple 01-1.png" alt="Temple 01">
   
   <div class="button-container">
-    <button class="button button1" onclick="window.location.href='./page01.html'" type="button"> ENTER </button>
-    <button class="button button2" onclick="window.location.href='./page00.html'"type="button">ABOUT</button>
+    <button class="button button1" onclick="openPopup()"> ENTER </button>
+    <button class="button button2" onclick="window.location.href='./page00.html'"type="about">ABOUT</button>
   </div>
+  <div class="popup" id="popup">
+    <h2>Welcome!</h2>
+    <p>123</p>
+    <button class="pushable" onclick="closePopup()">
+      <span class="front">
+          OK
+      </span>
+    </button>
 </div>
+</div>
+
+<script>
+  let popup = document.getElementById("popup")
+
+  function openPopup() {
+    popup.classList.add("openPopup")
+  }
+  function closePopup() {
+    popup.classList.remove("openPopup")
+  }
+</script>
 </body>
 </html>
