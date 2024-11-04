@@ -322,6 +322,30 @@ function clearmove() {
   }
 </script>
 
+<--popup-->
+<div class="popup" id="popup">
+    <img src="./asset/popup-1.png" alt="Popup Icon" class="popup-image">
+    <h2>Congradulate</h2>
+    <p>Your tasks are all done.</p>
+    <button class="pushable" onclick="closePopup()">
+      <span class="front">
+          Restart!
+      </span>
+    </button>
+</div>
+</div>
+
+<script>
+  let popup = document.getElementById("popup");
+
+  function openPopup() {
+    popup.classList.add("openPopup");
+  }
+  function closePopup() {
+    popup.classList.remove("openPopup");
+    window.location.href = './index.html';
+  }
+</script>
 
 </body>
 </body>
