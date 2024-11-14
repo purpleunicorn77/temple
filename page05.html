@@ -28,17 +28,32 @@
     height: auto;
   }
 
+  .video-container h2 {
+    position: absolute;
+    top: 5%; /* Adjust this value to control the vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-family: krungthep;
+    z-index: 2; /* Ensure it stays on top of other content */
+  }
+
   .text-overlay {
     position: absolute;
-    top: -10%;
+    top: 20%; /* Adjust this value to control the position of the text overlay */
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     color: white;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 1; /* Ensures it is below the h2 */
   }
 
 .text-bottom {
