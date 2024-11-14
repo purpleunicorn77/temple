@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./asset/nirvana.png" rel="icon">
+<style>
+/* Reset box-sizing */
+* {
+  box-sizing: border-box;
+}
 
+/* Container to hold Temple image and narrative panel side-by-side */
+.top-container {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+/* Style for the Temple 02 image */
+.temple-image {
+  width: 70%; /* Adjust as needed to make room for narrative panel */
+  padding-right: 10px;
+}
+
+.temple-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style for the narrative panel next to the temple image */
+.narrative-panel {
+  width: 30%; /* Adjust width to control panel size */
+  padding: 20px;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  border-left: 2px solid #ddd;
+  font-family: krungthep;
+  height: auto;
+}
+
+.narrative-panel h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.narrative-panel p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Style for the image grid below */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.column {
+  width: 19%; /* Adjust to fit five columns */
+  padding: 10px;
+  text-align: center;
+}
+
+.column img {
+  width: 120px;
+  height: 150px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.column:hover img {
+  transform: scale(1.1);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Container with Temple 02 image and Narrative Panel side-by-side -->
+<div class="top-container">
+  <div class="temple-image">
+    <img src="./asset/Temple 02.png" alt="Temple 02">
+  </div>
+
+  <!-- Right-side narrative panel -->
+  <div class="narrative-panel">
+    <h2>I am Guan Yin</h2>
+    <p>While deeply immersed in Prajna Paramita, clearly perceived the empty nature of the five skandhas, And transcended all suffering.</p>
+    <p>If you need my help, you must have enough blessings, good intentional action, and always be kind. Practice asceticism and you will attain the goal.</p>
+    <p>Tips: Start by offering fruit to Guan Yin.</p>
+  </div>
+</div>
+
+<!-- Image grid, below the temple image and narrative panel -->
+<div class="image-grid">
+      <div class="column">
+      <a href="./page09.html">
+      <img src="./asset/fruit05.png" alt="papaya"></a>
+  </div>
+</div>
+
+</body>
+</html>
