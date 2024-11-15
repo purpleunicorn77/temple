@@ -190,16 +190,14 @@ audio {
 <a href="./page01-3.html">Offering</a>
 
 <script>
-
-// Define the audio object
+  // Define the audio object
   const spinAudio = new Audio('./audio/poe.mp3');
 
-// Spin function with audio
+  // Spin function with audio
   function spin() {
     // Play audio when spinning starts
     spinAudio.play();
 
-  function spin() {
     const sets = document.querySelectorAll('.set');
     sets.forEach(set => {
       set.classList.add('spinning');
@@ -216,14 +214,11 @@ audio {
     });
   }
 
-//Define the audio object
-  const aAudio = new Audio('./audio/3.mp3')
-
-//Function to play the audio
-  function playAudio(){
+  // Function to play the stove click audio
+  const aAudio = new Audio('./audio/3.mp3');
+  function playAudio() {
     aAudio.play();
   }
-
 </script>
 <br>
 <br>
