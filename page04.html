@@ -121,10 +121,21 @@ Your browser does not support the video tag.  </video>
   <p> If it is not available, it is empty. Therefore, all the Buddha’s teachings are ultimately empty. There is no permanence, no immutability. </p>
 </div>
 </div>
+
+<!-- Audio Element -->
+<audio id="learnMoreAudio">
+  <source src="./audio/form.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
   
 <script>
 function openPanel() {
   document.getElementById("infoPanel").classList.add("active");
+}
+
+ // Play the audio
+  const audio = document.getElementById("learnMoreAudio");
+  audio.play();
 }
 
 function closePanel() {
