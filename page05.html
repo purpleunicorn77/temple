@@ -172,6 +172,11 @@ function openPanel() {
   document.getElementById("infoPanel").classList.add("active");
 }
 
+ // Play the audio
+  const audio = document.getElementById("learnMoreAudio");
+  audio.play(); // Play the audio file
+}
+
 function closePanel() {
   document.getElementById("infoPanel").classList.remove("active");
 }
