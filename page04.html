@@ -22,9 +22,13 @@ body, html {
 }
 
 .background-image {
-  width: 100%;
-  height: 100%;
-  display: block;
+  position: absolute; /* To ensure it stays in the background */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  object-fit: cover; /* Ensure the image covers the screen without distortion */
+  z-index: -1; /* Place the background behind other elements */
 }
 
 .overlay-video {
