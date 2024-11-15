@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="./asset/nirvana.png" rel="icon">
 <style>
-
-body, html{
-  margin:0;
+body, html {
+  margin: 0;
   padding: 0;
   height: 100%;
   display: flex;
@@ -18,7 +17,7 @@ body, html{
 
 .container {
   position: relative;
-  width: 400px
+  width: 400px; /* Fixed missing semicolon */
   max-width: 300px;
 }
 
@@ -97,29 +96,28 @@ body, html{
   cursor: pointer;
   color: white;
 }
-
 </style>
 </head>
 <body>
-
-
 <div class="container">
   <img src="./asset/meditation-03.png" alt="Background Image" class="background-image">
-<video class="overlay-video" controls>
-<source src="./waterfall-1.mp4" type="video/mp4">
-Your browser does not support the video tag.  </video>
+  <video class="overlay-video" controls>
+    <source src="./waterfall-1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<div class="button-container">
+  <div class="button-container">
     <a href="./page01-1.html"><button class="button">Offering</button></a>
     <button class="button" onclick="openPanel()">Learn More</button>
   </div>
-<!-- Sliding Panel -->
-<div class="panel" id="infoPanel">
-  <span class="close-btn" onclick="closePanel()">&times;</span>
-  <h2>More Information</h2>
-  <p> All fruiting Karma arises from causes and conditions, and the nature of fruiting karma is unobtainable. </p>
-  <p> If it is not available, it is empty. Therefore, all the Buddha’s teachings are ultimately empty. There is no permanence, no immutability. </p>
-</div>
+
+  <!-- Sliding Panel -->
+  <div class="panel" id="infoPanel">
+    <span class="close-btn" onclick="closePanel()">&times;</span>
+    <h2>More Information</h2>
+    <p> All fruiting Karma arises from causes and conditions, and the nature of fruiting karma is unobtainable. </p>
+    <p> If it is not available, it is empty. Therefore, all the Buddha’s teachings are ultimately empty. There is no permanence, no immutability. </p>
+  </div>
 </div>
 
 <!-- Audio Element -->
@@ -127,15 +125,14 @@ Your browser does not support the video tag.  </video>
   <source src="./audio/form.mp3" type="audio/mp3">
   Your browser does not support the audio element.
 </audio>
-  
+
 <script>
 function openPanel() {
   document.getElementById("infoPanel").classList.add("active");
-}
 
- // Play the audio
+  // Play the audio
   const audio = document.getElementById("learnMoreAudio");
-  audio.play();
+  audio.play(); // Play the audio file
 }
 
 function closePanel() {
