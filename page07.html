@@ -190,6 +190,15 @@ audio {
 <a href="./page01-3.html">Offering</a>
 
 <script>
+
+// Define the audio object
+  const spinAudio = new Audio('./audio/poe.mp3');
+
+// Spin function with audio
+  function spin() {
+    // Play audio when spinning starts
+    spinAudio.play();
+
   function spin() {
     const sets = document.querySelectorAll('.set');
     sets.forEach(set => {
