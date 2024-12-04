@@ -1,18 +1,42 @@
 <html> 
 <style>
+.button {
+  position: absolute;
+        left: 50%;
+        bottom: 15px; /* Adjust this value as needed */
+        transform: translateX(-50%);
+        display: inline-block;
+        padding: 16px 32px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        outline: none;
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #666;
+}
+        .button:hover {background-color: #AE2C2B;}
 
+        .button:active {
+        background-color: skyblue;
+        box-shadow: 0 5px #666;
+        transform: translateX(-50%);
+        }
 </style>
 <body> 
 
 <video width="400" controls>
-  <source src="mov_bbb.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
+  <source src="intro.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 <div class="fixed-bg"></div>
-<a href="./index.html">
-<button class="button">Back</button>
+<a href="./entrance.html">
+<button class="button">OK!</button>
 
 </body> 
 </html>
